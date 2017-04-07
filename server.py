@@ -16,7 +16,6 @@ def results():
 
 	query = data.get('searchterm')
 	#query = request.form['searchterm']
-	print "You searched for: " + query
 	resType = ['Team', 'Team', 'Team']
 	title = ['Seahawks', 'Raiders', 'Steelers']
 	location = ['Seattle', 'Oakland', 'Pittsburgh']
