@@ -9,21 +9,27 @@
 	<body>
 
 		<h2>
-			<div id='redText'>You</div> <div class='blueText'>searched</div> for: {{query}}
+			<div id='redText'>Results for: {{query}}</div>
 		</h2>
 		
 		<table>
 			<thead>
 				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
+					<th>Library</th>
+					<th>Name</th>
+					<th>Property1</th>
+					<th>State</th>
+					<th>Link</th>
 				</tr>
 			</thead>
 			<tbody>
-				{% for fName, lName in results %}
+				{% for type, title, location, state, link in results %}
 				<tr>
-					<td>{{fName}}</td>
-					<td>{{lName}}</td>
+					<td>{{type}}</td>
+					<td>{{title}}</td>
+					<td>#</td>
+					<td>{{state}}</td>
+					<td><a href='{{link}}'>More info</a></td>
 				</tr>
 				{% endfor %}
 			</tbody>

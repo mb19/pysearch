@@ -17,9 +17,12 @@ def results():
 	query = data.get('searchterm')
 	#query = request.form['searchterm']
 	print "You searched for: " + query
-	firstName = ['Ben','Sarah', 'Xandar', 'Ellewyn']
-	lastName = ['McCamish', 'G', 'Quazar', 'Sabbeth']
-	return render_template('results.html', query=query, results=zip(firstName, lastName))
+	resType = ['Team', 'Team', 'Team']
+	title = ['Seahawks', 'Raiders', 'Steelers']
+	location = ['Seattle', 'Oakland', 'Pittsburgh']
+	states = ['Washington', 'California', 'Pennsylvania']
+	links = ['https://en.wikipedia.org/wiki/Seattle_Seahawks', 'https://en.wikipedia.org/wiki/Oakland_Raiders', 'https://en.wikipedia.org/wiki/Pittsburgh_Steelers']
+	return render_template('results.html', query=query, results=zip(resType, title, location, states, links))
 
 if __name__ == '__main__':
 	app.run(debug=True)
