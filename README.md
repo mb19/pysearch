@@ -1,4 +1,4 @@
-# Database Search Prohect - CS483
+# Database Search Project - CS483
 
 ### Description
 A basic server in Python using Jinja to implement a basic web interface for searching specified databases in Whoosh! and MongoDB.
