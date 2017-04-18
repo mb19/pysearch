@@ -2,7 +2,7 @@
 MAIN=main.py
 
 install-tools:
-	pip install Jinja2 Flask Whoosh pymongo python-dotenv
+	pip install Jinja2 Flask Whoosh pymongo python-dotenv lxml requests python-dateutil
 	cp ./server/config/.env.template ./server/config/.env
 
 install: install-tools
