@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, make_response, jsonify
 
 from searchers.all import build_searcher
+from searchers.base import SearchResult
 import httplib2
 
 app = Flask(__name__)
@@ -85,6 +86,37 @@ class Server(object):
 		results['stats'] = results['stats'].serialize()
 
 		return jsonify(results)
+
+	@app.route('/api/measure', methods=['POST'])
+	def measure():
+		data = request.form
+
+		def makeError():
+			return make_response(jsonify({'error': 'Missing arguements'}), 400)
+			
+		if len(data) is not 3: 
+			return makeError()
+
+		if not data.has_key('top') or not data.has_key('total') or not data.has_key('relevant'):
+			return makeError()
+
+		top = data.get('top')
+		total = data.get('total')
+		relevant = data.get('relevant')
+
+		if top == '' or total == '' or relevant == '':
+			return makeError()
+
+		if int(top) == 0 or int(total) == 0:
+			return makeError()
+
+		stats = SearchResult(top, total)
+		print stats.serialize()
+		return jsonify({
+			'precision': stats.calculate_precision(relevant),
+			'recall': stats.calculate_recall(relevant),
+			'f-measure': stats.calculate_f_measure(relevant)
+		})
 
 	@app.route('/results/', methods=['GET', 'POST'])
 	def results():

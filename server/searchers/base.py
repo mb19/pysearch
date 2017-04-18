@@ -10,15 +10,21 @@ class SearchResult(object):
 		self.total_relevant = total_relevant
 
 	def calculate_precision(self, relevant):
-		return relevant / float(self.top_relevant)
+		return float(relevant) / float(self.top_relevant)
 
 	def calculate_recall(self, relevant):
-		return relevant / float(self.total_relevant)
+		return float(relevant) / float(self.total_relevant)
 
 	def calculate_f_measure(self, relevant):
 		precision = self.calculate_precision(relevant)
 		recall = self.calculate_recall(relevant)
-		return (2 * precision * recall) / (precision + recall) 
+
+		multiplied = 2 * precision * recall
+		added = precision + recall
+
+		if added == 0: 
+			return 0
+		return multiplied / added
 
 	def serialize(self):
 		return {
