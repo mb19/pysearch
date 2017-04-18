@@ -1,5 +1,6 @@
 
 from base import IndexSearcher
+import pymongo
 
 class MongoSearch(object):
 
@@ -18,9 +19,30 @@ class TableSearch(IndexSearcher):
 			}
 		}
 
+	def meta(self):
+		return {
+			"$meta": 'textScore'
+		}
+
+	def projection(self):
+		raise NotImplementedError("Must implement to use.")
+
+	def normalize(self, document):
+		raise NotImplementedError("Must implement to use.")
+
+	def search(self, text):
+		query = self.query(text)
+
+		projection = self.projection()
+
+		meta = self.meta()
+
+		results = self.table.find(query, projection).sort([('score', self.meta())])
+		return [self.normalize(rest) for rest in results]
+
 class PlayerSearch(TableSearch):
 
-	def __normalize(self, document):
+	def normalize(self, document):
 		return {
 			'document': {
 				'prop1': document['name'],
@@ -32,26 +54,19 @@ class PlayerSearch(TableSearch):
 			'score': document['score']
 		}
 
-	def search(self, text):
-		query = self.query(text)
-
-		projection = {
+	def projection(self):
+		return {
 			'name': 1,
 			'position.name': 1,
 			'number': 1,
 			'team.name': 1,
 			'url': 1,
-			'score': {
-				'$meta': 'textScore'
-			}
+			'score': self.meta()
 		}
-
-		results = self.table.find(query, projection)
-		return [self.__normalize(rest) for rest in results]
 
 class RestaurantSearch(TableSearch):
 
-	def __normalize(self, document):
+	def normalize(self, document):
 		return {
 			'document': {
 				'prop1': document['Name'],
@@ -63,19 +78,12 @@ class RestaurantSearch(TableSearch):
 			'score': document['score']
 		}
 
-	def search(self, text):
-		query = self.query(text)
-
-		projection = {
+	def projection(self):
+		return {
 			'Name': 1,
 			'Rating': 1,
 			'City': 1,
 			'State.abbr': 1,
 			'URL': 1,
-			'score': {
-				'$meta': 'textScore'
-			}
+			'score': self.meta()
 		}
-
-		results = self.table.find(query, projection)
-		return [self.__normalize(rest) for rest in results]
