@@ -37,7 +37,7 @@ class TableSearch(IndexSearcher):
 
 		meta = self.meta()
 
-		results = self.table.find(query, projection).sort([('score', self.meta())])
+		results = self.table.find(query, projection).sort([('score', self.meta())]).limit(10)
 		return [self.normalize(rest) for rest in results]
 
 class PlayerSearch(TableSearch):

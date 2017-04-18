@@ -22,18 +22,21 @@ class Server(object):
 
 		query = data.get('searchterm')
 		dbType = data.get('searchDatabase')
-		searcher = build_searcher()
+		table = data.get('library')
 
+		searcher = build_searcher()
 		results = []
 		if(dbType == 'mongo'):
-			# TODO: This shows how you can query results from the database.
-			# It still is missing a way to toggle between a player search and
-			# restaurant search.
-			results = searcher.mongo.players.search(query)
+			# Fetches results from the mongo database. 
+			# It toggles the search table based on user selected drop down
+			if table == 'players':
+				results = searcher.mongo.players.search(query)
+			else:
+				results = searcher.mongo.restaurants.search(query)
+				
 		else:
-			# TODO: Filter the search for the specific tables
-			results = searcher.whoosh.search(query).documents
-			print results
+			# Queries the whoosh index for the user specified table.
+			results = searcher.whoosh.search(query, table).documents
 
 		return render_template('results.html', query=query, results=results)
 

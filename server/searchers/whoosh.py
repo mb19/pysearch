@@ -7,7 +7,7 @@ class WhooshSearch(IndexSearcher):
 	def __init__(self, index):
 		self.__indexName = index
 
-	def search(self, text):
+	def search(self, text, table):
 		manager = IndexManager(self.__indexName, None)
-		results = manager.search(text)
+		results = manager.search(text, table)
 		return results

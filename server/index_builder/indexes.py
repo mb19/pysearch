@@ -16,14 +16,16 @@ import datetime
 class QueryResults(object):
 	""" Contains the query time and the documents that were returned. """
 
-	def __init__(self, queryResult):
+	def __init__(self, queryResult, table):
 
 		self.documents = []
 		""" The list of documents returned by the search. """
 		for i in range(0, queryResult.scored_length()):
 			doc = queryResult[i].fields()
 			score = queryResult.score(i)
-			self.documents.append({ 'score': score, 'document': doc })
+
+			if doc['prop6'] == table:
+				self.documents.append({ 'score': score, 'document': doc })
 
 		self.time = queryResult.runtime
 		""" The total query time. This excludes mapping done by this code. """
@@ -39,7 +41,8 @@ class SchemaBuilder(object):
 			"prop2": TEXT(analyzer=StemmingAnalyzer(), stored=True),
 			"prop3": TEXT(analyzer=StemmingAnalyzer(), stored=True),
 			"prop4": TEXT(analyzer=StemmingAnalyzer(), stored=True),
-			"prop5": TEXT(analyzer=StemmingAnalyzer(), stored=True)
+			"prop5": TEXT(analyzer=StemmingAnalyzer(), stored=True),
+			"prop6": TEXT(stored=True)
 		}
 
 		return Schema(**params)
@@ -75,7 +78,7 @@ class IndexManager(object):
 
 		return index
 
-	def search(self, text):
+	def search(self, text, table):
 		""" Searches the index for anything containing the text. """
 
 		schema = self.__get_schema()
@@ -85,7 +88,7 @@ class IndexManager(object):
 		with index.searcher(weighting=scoring.TF_IDF()) as searcher:
 			query = MultifieldParser(schema.names(), schema=index.schema).parse(text)
 			results = searcher.search(query)
-			return QueryResults(results)
+			return QueryResults(results, table)
 
 	def __get_index(self, full_schema, shouldClean):
 		""" Creates an index if necessary and returns it. """
@@ -117,13 +120,14 @@ class IndexManager(object):
 			document['prop3'] = unicode(player['number'])
 			document['prop4'] = unicode(player['team']['name'])
 			document['prop5'] = unicode(player['url'])
+			document['prop6'] = u'players'
 
 			writer.add_document(**document)
 			current += 1
 			print "Players Indexed {0}/{1}".format(current, total)
 
 	def __index_restaurants(self, writer):
-		""" Indexes the restaraunts collection. """
+		""" Indexes the restaurants collection. """
 
 		total = self.__db.restaurants.count()
 		current = 0
@@ -135,6 +139,7 @@ class IndexManager(object):
 			document['prop3'] = unicode(rest['City'])
 			document['prop4'] = unicode(rest['State']['abbr'])
 			document['prop5'] = unicode(rest['URL'])
+			document['prop6'] = u'restaurants'
 
 			writer.add_document(**document)
 			current += 1
