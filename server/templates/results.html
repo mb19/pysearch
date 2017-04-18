@@ -30,7 +30,7 @@
 					<td>{{doc.document.prop2}}</td>
 					<td>{{doc.document.prop3}}</td>
 					<td>{{doc.document.prop4}}</td>
-					<td><a href='{{doc.document.prop5}}'>More info</a></td>
+					<td><a href='{{ url_for('navigate') }}?url={{doc.document.prop5}}'>More info</a></td>
 					<td>{{doc.score}}</td>
 				</tr>
 				{% endfor %}

@@ -1,5 +1,6 @@
 
 from base import IndexSearcher
+import urllib
 import pymongo
 
 class MongoSearch(object):
@@ -49,7 +50,7 @@ class PlayerSearch(TableSearch):
 				'prop2': document['position']['name'],
 				'prop3': document['number'],
 				'prop4': document['team']['name'],
-				'prop5': "https://en.wikipedia.org{0}".format(document['url'])
+				'prop5': urllib.quote_plus(document['url'])
 			},
 			'score': document['score']
 		}
@@ -73,7 +74,7 @@ class RestaurantSearch(TableSearch):
 				'prop2': document['Rating'],
 				'prop3': document['City'],
 				'prop4': document['State']['abbr'],
-				'prop5': document['URL']
+				'prop5': urllib.quote_plus(document['URL'])
 			},
 			'score': document['score']
 		}

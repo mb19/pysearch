@@ -5,7 +5,7 @@ class PlayerScraper(object):
     def scrapeLink(self, li):
         path = li.xpath('./a')
         if len(path) > 0:
-            return path[0].get('href')
+            return 'https://en.wikipedia.org{0}'.format(path[0].get('href'))
         return ''
 
     def scrapeNumber(self, li):
