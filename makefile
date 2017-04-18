@@ -22,4 +22,4 @@ run-server:
 
 server: run-server
 
-all: install db index server
+all: db index server

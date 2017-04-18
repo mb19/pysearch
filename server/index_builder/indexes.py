@@ -138,7 +138,7 @@ class IndexManager(object):
 			document['prop1'] = unicode(rest['Name'])
 			document['prop2'] = unicode(rest['Rating'])
 			document['prop3'] = unicode(rest['City'])
-			document['prop4'] = unicode(rest['State']['abbr'])
+			document['prop4'] = unicode(rest['State']['name'])
 			document['prop5'] = unicode(rest['URL'])
 			document['prop6'] = u'restaurants'
 
