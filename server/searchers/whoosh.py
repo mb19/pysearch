@@ -1,5 +1,6 @@
 
 from base import IndexSearcher
+from ..index_builder.indexes import IndexManager
 
 class WhooshSearch(IndexSearcher):
 

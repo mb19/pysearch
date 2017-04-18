@@ -27,7 +27,7 @@ class PlayerSearch(TableSearch):
 				'prop2': document['position']['name'],
 				'prop3': document['number'],
 				'prop4': document['team']['name'],
-				'prop5': document['url']
+				'prop5': "https://en.wikipedia.org{0}".format(document['url'])
 			},
 			'score': document['score']
 		}
@@ -57,7 +57,7 @@ class RestaurantSearch(TableSearch):
 				'prop1': document['Name'],
 				'prop2': document['Rating'],
 				'prop3': document['City'],
-				'prop4': document['State'],
+				'prop4': document['State']['abbr'],
 				'prop5': document['URL']
 			},
 			'score': document['score']
@@ -70,7 +70,7 @@ class RestaurantSearch(TableSearch):
 			'Name': 1,
 			'Rating': 1,
 			'City': 1,
-			'State': 1,
+			'State.abbr': 1,
 			'URL': 1,
 			'score': {
 				'$meta': 'textScore'

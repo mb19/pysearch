@@ -2,7 +2,7 @@
 from db_importers.MongoNFL.importer import NFLImporter
 from db_importers.yelp_scraper.importer import YelpImporter
 
-from index_builder.main import Builder
+from server.index_builder.main import Builder
 
 from server.main import Server
 from server.config.settings import Settings

@@ -22,23 +22,20 @@ class Server(object):
 
 		query = data.get('searchterm')
 		dbType = data.get('searchDatabase')
+		searcher = build_searcher()
+
 		results = []
 		if(dbType == 'mongo'):
 			# TODO: This shows how you can query results from the database.
 			# It still is missing a way to toggle between a player search and
 			# restaurant search.
-			results = build_searcher().mongo.players.search(query)
+			results = searcher.mongo.players.search(query)
+		else:
+			# TODO: Filter the search for the specific tables
+			results = searcher.whoosh.search(query).documents
+			print results
 
 		return render_template('results.html', query=query, results=results)
-		
-
-		# #query = request.form['searchterm']
-		# resType = ['Team', 'Team', 'Team']
-		# title = ['Seahawks', 'Raiders', 'Steelers']
-		# location = ['Seattle', 'Oakland', 'Pittsburgh']
-		# states = ['Washington', 'California', 'Pennsylvania']
-		# links = ['https://en.wikipedia.org/wiki/Seattle_Seahawks', 'https://en.wikipedia.org/wiki/Oakland_Raiders', 'https://en.wikipedia.org/wiki/Pittsburgh_Steelers']
-		# return render_template('results.html', query=query, results=zip(resType, title, location, states, links))
 
 	def run(self, isDebug):
 		app.run(debug=isDebug)
