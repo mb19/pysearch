@@ -4,6 +4,7 @@ from yelp.oauth1_authenticator import Oauth1Authenticator
 from state_seeder import StateSeeder
 from pymongo import MongoClient, TEXT
 import urllib
+import os
 
 class YelpImporter(object):
     def __init__(self, db):
@@ -46,7 +47,9 @@ class YelpImporter(object):
             'limit' : 20,
         }
 
-        with open("data_imports/yelp_scraper/city_names.txt") as f:
+        file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "city_names.txt")
+        
+        with open(file) as f:
             lines = f.readlines()
 
         states = StateSeeder()

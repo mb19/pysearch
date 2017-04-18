@@ -7,7 +7,7 @@ A basic server in Python using Jinja to implement a basic web interface for sear
 ### Install Instructions
 The server requires an environment using Python 2.7. The required packages can be installed using:
 
-`pip install Jinja2`
+`pip install Jinja2 Flask Whoosh pymongo python-dotenv`
 
 `pip install Flask`
 

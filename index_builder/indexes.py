@@ -31,105 +31,32 @@ class QueryResults(object):
 class SchemaBuilder(object):
 	""" Provides a way to build a normalized schema for any document type. """
 
-	def build(self, document, size):
+	def build_index_schema(self):
 		""" Builds a schema based on the proeprties of a given document. """
-		results = self.__build_normalized_base(document, size, False)
 
-		self.__proccess_document(document, 0, results, False)
+		params = {
+			"prop1": TEXT(analyzer=StemmingAnalyzer(), stored=True),
+			"prop2": TEXT(analyzer=StemmingAnalyzer(), stored=True),
+			"prop3": TEXT(analyzer=StemmingAnalyzer(), stored=True),
+			"prop4": TEXT(analyzer=StemmingAnalyzer(), stored=True),
+			"prop5": TEXT(analyzer=StemmingAnalyzer(), stored=True)
+		}
 
-		return Schema(**results)
+		return Schema(**params)
 
-	def flatten(self, document, size):
-		""" Flattens a document for indexing. """
-		results = self.__build_normalized_base(document, size, True)
-		self.__proccess_document(document, 0, results, True)
-		return results
-
-	def find_max_info(self, db):
-		""" Finds the record with the largest field count (i.e. max index size). """
-		current = (0, None)
-		for player in db.players.find():
-			count = self.count_fields(player)
-			if count > current[0]:
-				current = (count, player)
-
-		return current
-
-	def count_fields(self, document):
-		""" Counts the total amount of fields (including nested documents) for a document. """
-		count = 0
-		for key, value in document.iteritems():
-			valType = type(value)
-			if(valType == dict):
-				count += self.count_fields(value)
-			else:
-				count += 1
-		return count
-
-	def normalize_flattened(self, flattened, mapping):
-		""" Swaps the properties so that prop1 through prop5 are the important text values. """
-		for source, dest in mapping:
-			# print "Swapping {0} with {1}".format(flattened[dest], flattened[source])
-			
-			temp = flattened[dest]
-
-			flattened[dest] = flattened[source]
-			flattened[source] = temp
-
-		return flattened
-
-	def __proccess_document(self, document, index, results, isFlattening):
-		""" Process a given document and converts the properties to index properties. """
-
-		for key, value in document.iteritems():
-			valType = type(value)
-			if(valType == dict):
-				index = self.__proccess_document(value, index, results, isFlattening)
-			else:
-				if value == None:
-					# bad value, so assume string and set to unicode.
-					value = u''
-
-				index += 1
-				actualName = self.__make_prop_name(index)
-				if isFlattening:
-					self.__assign_value(actualName, value, results)
-				else:
-					self.__assign_index_type(actualName, value, results)
-
-		return index
-
-	def __build_normalized_base(self, document, size, isFlattening):
-		result = {}
-		for index in range(1, size+1):
-			if isFlattening:
-				result[self.__make_prop_name(index)] = None
-			else:
-				result[self.__make_prop_name(index)] = TEXT
-		
-		return result
-
-	def __assign_value(self, name, value, structure):
-		""" Maps a property name to a index type. """
-		structure[name] = unicode(value)
-
-	def __assign_index_type(self, name, value, structure):
-		""" Maps a property name to a index type. """
-		structure[name] = TEXT(analyzer=StemmingAnalyzer(), stored=True)
-
-	def __make_prop_name(self, prop):
-		""" Makes a property name in the format: prop1, prop2, prop3, etc. """
-
-		if type(prop) is not int:
-			raise ValueError("Parameter must be an integer value.")
-
-		return "prop" + str(prop)
+	def build_data_schema(self):
+		return {
+			"prop1": u'',
+			"prop2": u'',
+			"prop3": u'',
+			"prop4": u'',
+			"prop5": u''
+		}
 
 
 class IndexManager(object):
-	def __init__(self, indexPath, indexSize, db):
+	def __init__(self, indexPath, db):
 		self.__index_path = indexPath
-		self.__index_size = indexSize
 		self.__db = db
 
 	def build(self):
@@ -174,75 +101,41 @@ class IndexManager(object):
 
 	def __get_schema(self):
 		# We use the player document because it contains the most fields.
-		playerDoc = self.__db.players.find_one()
-		builder = SchemaBuilder()
-		return builder.build(playerDoc, self.__index_size)
+		return SchemaBuilder().build_index_schema()
 
 	def __index_players(self, writer):
 		""" Indexes the players collection. """
-		builder = SchemaBuilder()
-
-		mapping = [
-			("prop24", "prop2"),
-			("prop10", "prop4"),
-			("prop24", "prop5")
-		]
 
 		total = self.__db.players.count()
 		current = 0
 		for player in self.__db.players.find({}):
-			document = builder.flatten(player, self.__index_size)
-			flattened = builder.normalize_flattened(document, mapping)
-			flattened = {
-				'prop1': flattened['prop1'],
-				'prop2': flattened['prop2'],
-				'prop3': flattened['prop3'],
-				'prop4': flattened['prop4'],
-				'prop5': flattened['prop5'],
-			}
 
-			# flattened = (**flattened)[0:5]
-			# results = {}
-			# count = 0
-			# for key, val in flattened.iteritems():
-			# 	if count == 4:
-			# 		break
-			# 	results[key] = val
-			# 	count += 1
+			document = SchemaBuilder().build_data_schema()
 
-			
-			# print results
-			# print flattened[flattened.keys()[0:5]]
+			document['prop1'] = unicode(player['name'])
+			document['prop2'] = unicode(player['position']['name'])
+			document['prop3'] = unicode(player['number'])
+			document['prop4'] = unicode(player['team']['name'])
+			document['prop5'] = unicode(player['url'])
 
-			# Now reaarange property names for normalizing.
-			writer.add_document(**flattened)
+			writer.add_document(**document)
 			current += 1
 			print "Players Indexed {0}/{1}".format(current, total)
 
 	def __index_restaurants(self, writer):
 		""" Indexes the restaraunts collection. """
-		builder = SchemaBuilder()
-
-		mapping = [
-			("prop2", "prop1"),
-			("prop3", "prop2"),
-			("prop5", "prop4")
-		]
 
 		total = self.__db.restaurants.count()
 		current = 0
 		for rest in self.__db.restaurants.find({}):
-			document = builder.flatten(rest, self.__index_size)
-			flattened = builder.normalize_flattened(document, mapping)
+			document = SchemaBuilder().build_data_schema()
 
-			flattened = {
-				'prop1': flattened['prop1'],
-				'prop2': flattened['prop2'],
-				'prop3': flattened['prop3'],
-				'prop4': flattened['prop4'],
-				'prop5': flattened['prop5'],
-			}
+			document['prop1'] = unicode(rest['Name'])
+			document['prop2'] = unicode(rest['Rating'])
+			document['prop3'] = unicode(rest['City'])
+			document['prop4'] = unicode(rest['State'])
+			document['prop5'] = unicode(rest['URL'])
 
-			writer.add_document(**flattened)
+			writer.add_document(**document)
 			current += 1
 			print "Restaurants Indexed {0}/{1}".format(current, total)

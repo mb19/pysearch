@@ -3,22 +3,21 @@ from db_importers.MongoNFL.importer import NFLImporter
 from db_importers.yelp_scraper.importer import YelpImporter
 
 from index_builder.main import Builder
+
 from server.main import Server
-from config.settings import Settings
+from server.config.settings import Settings
 
 import argparse
 
 class App(object):
 
+	indexName = "index"
+
 	def __settings(self):
 		return Settings()
 
 	def build_index(self):
-		args = {
-			"build": True,
-			"index": "index"
-		}
-		return Builder().build(self.__settings(), args)
+		return Builder().build(self.__settings().db, self.indexName)
 
 	def import_database(self):
 		settings = self.__settings()

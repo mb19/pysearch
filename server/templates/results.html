@@ -20,16 +20,18 @@
 					<th>Property1</th>
 					<th>State</th>
 					<th>Link</th>
+					<th>Score</th>
 				</tr>
 			</thead>
 			<tbody>
-				{% for type, title, location, state, link in results %}
+				{% for doc in results %}
 				<tr>
-					<td>{{type}}</td>
-					<td>{{title}}</td>
-					<td>#</td>
-					<td>{{state}}</td>
-					<td><a href='{{link}}'>More info</a></td>
+					<td>{{doc.document.prop1}}</td>
+					<td>{{doc.document.prop2}}</td>
+					<td>{{doc.document.prop3}}</td>
+					<td>{{doc.document.prop4}}</td>
+					<td><a href='{{doc.document.prop5}}'>More info</a></td>
+					<td>{{doc.score}}</td>
 				</tr>
 				{% endfor %}
 			</tbody>
