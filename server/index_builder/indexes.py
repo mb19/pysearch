@@ -85,6 +85,7 @@ class IndexManager(object):
 		index = self.__get_index(schema, False)
 
 		# Here we use TF-IDF because that is what our mongo search will use.
+
 		with index.searcher(weighting=scoring.TF_IDF()) as searcher:
 			query = MultifieldParser(schema.names(), schema=index.schema).parse(text)
 			results = searcher.search(query)
