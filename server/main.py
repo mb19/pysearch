@@ -1,16 +1,31 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, make_response, jsonify
 
 from searchers.all import build_searcher
 import httplib2
 
 app = Flask(__name__)
 
+def fetch_data(term, db, lib, limit=10):
+	searcher = build_searcher()
+	results = []
+	if(db == 'mongo'):
+		# Fetches results from the mongo database. 
+		# It toggles the search table based on user selected drop down
+		if lib == 'players':
+			results = searcher.mongo.players.search(term, limit)
+		elif lib == 'restaurants':
+			results = searcher.mongo.restaurants.search(term, limit)
+			
+	elif db == 'whoosh':
+		# Queries the whoosh index for the user specified table.
+		results = searcher.whoosh.search(term, lib, limit)
+	return results
+
 
 class Server(object):
 
 	@app.route('/', methods=['GET', 'POST'])
 	def index():
-		print "Someone is at the home page."
 		return render_template('welcome_page.html')
 
 	@app.route('/navigate', methods=['GET'])
@@ -45,6 +60,32 @@ class Server(object):
 		error = "400 - Bad Request: The request was malformed or could not be processed."
 		return render_template('error.html', error=error)
 
+	@app.route('/api/query', methods=['GET'])
+	def query():
+		data = request.args
+
+		def makeError():
+			return make_response(jsonify({'error': 'Missing arguements'}), 400)
+			
+		if len(data) is not 4: 
+			return makeError()
+
+		if not data.has_key('term') or not data.has_key('db') or not data.has_key('lib') or not data.has_key('limit'):
+			return makeError()
+
+		term = data.get('term')
+		db = data.get('db')
+		lib = data.get('lib')
+		limit = data.get('limit')
+
+		if term == '' or db == '' or lib == '' or limit == '':
+			return makeError()
+
+		results = fetch_data(term, db, lib, int(limit))
+		results['stats'] = results['stats'].serialize()
+
+		return jsonify(results)
+
 	@app.route('/results/', methods=['GET', 'POST'])
 	def results():
 		if request.method == 'POST':
@@ -56,21 +97,9 @@ class Server(object):
 		dbType = data.get('searchDatabase')
 		table = data.get('library')
 
-		searcher = build_searcher()
-		results = []
-		if(dbType == 'mongo'):
-			# Fetches results from the mongo database. 
-			# It toggles the search table based on user selected drop down
-			if table == 'players':
-				results = searcher.mongo.players.search(query)
-			else:
-				results = searcher.mongo.restaurants.search(query)
-				
-		else:
-			# Queries the whoosh index for the user specified table.
-			results = searcher.whoosh.search(query, table).documents
+		results = fetch_data(query, dbType, table)
 
-		return render_template('results.html', query=query, results=results)
+		return render_template('results.html', query=query, results=results['documents'])
 
 	def run(self, isDebug):
 		app.run(debug=isDebug)

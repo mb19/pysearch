@@ -22,4 +22,9 @@ run-server:
 
 server: run-server
 
+test-code: 
+	python server/searchers/tests.py
+
+test: test-code
+
 all: db index server

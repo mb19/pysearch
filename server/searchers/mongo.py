@@ -1,5 +1,5 @@
 
-from base import IndexSearcher
+from base import IndexSearcher, SearchResult
 import urllib
 import pymongo
 
@@ -31,18 +31,20 @@ class TableSearch(IndexSearcher):
 	def normalize(self, document):
 		raise NotImplementedError("Must implement to use.")
 
-	def search(self, text):
+	def search(self, text, limit=10):
 		query = self.query(text)
 
 		projection = self.projection()
 
 		meta = self.meta()
 
-		results = self.table.find(query, projection).sort([('score', self.meta())]).limit(10)
-		count = results.count()
-		items = results.count(True)
-		
-		return [self.normalize(rest) for rest in results]
+		query = self.table.find(query, projection).sort([('score', self.meta())]).limit(limit)
+		return {
+			'documents': [self.normalize(rest) for rest in query],
+			'stats': SearchResult(query.count(True), query.count())
+		}
+
+		return 
 
 class PlayerSearch(TableSearch):
 
