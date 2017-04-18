@@ -1,7 +1,7 @@
 
 from nfl_crawler import BaseCrawler
 from coach_scraper import CoachScraper, CoachScrapeResult
-from seeders import StateSeeder
+from ..seeders import StateSeeder
 from datetime import date
 
 class Scraper(BaseCrawler):

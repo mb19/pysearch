@@ -2,7 +2,7 @@
 from coach_crawler import CoachCrawler
 from dateutil.parser import parse
 from datetime import date
-from seeders import StateSeeder
+from ..seeders import StateSeeder
 
 class CoachScrapeResult(object):
     """ Represnts the results of a scraping. """

@@ -1,5 +1,5 @@
-from crawlers.team_crawler import TeamCrawler
-from crawlers.player_scraper import PlayerScraper
+from team_crawler import TeamCrawler
+from player_scraper import PlayerScraper
 
 class TeamScraper(object):
 	def __init__(self):

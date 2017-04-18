@@ -1,21 +1,19 @@
 
-INDEXER=indexer
-DB_IMPORTERS=db_importers
+MAIN=main.py
 
-players:
-	python $(DB_IMPORTERS)/MongoNFL/main.py
+run-db-import:
+	python $(MAIN) --import
 
-food:
-	python $(DB_IMPORTERS)/yelp_scraper/main.py
+db: run-db-import
 
-database: players food
+build-index:
+	python $(MAIN) --build
 
-index:
-	python $(INDEXER)/main.py --build index
+index: build-index
 
-server: 
-	python server.py
+run-server:
+	python $(MAIN) --server
 
-all: database index
+server: run-server
 
-
+all: db index server

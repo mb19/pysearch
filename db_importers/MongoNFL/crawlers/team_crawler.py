@@ -1,5 +1,5 @@
 from nfl_crawler import BaseCrawler
-from crawlers.player_scraper import PlayerScraper
+from player_scraper import PlayerScraper
 import unicodedata
 from lxml import etree, objectify
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href= "{{ url_for('static',filename='styles/main.css') }}">
+		<title>Search Project</title>
+	</head>
+
+	<body>
+		<h3>Web Data Search</h3>
+		<form method="get" action="{{ url_for('results') }}">
+			<label>Search method: </label>
+			<select name="searchDatabase">
+				<option value="whoosh">Whoosh!</option>
+				<option value="mongo">MongoDB</option>
+			</select><br />
+			<label>Search Property: </label>
+			<select name="searchProperty">
+				<option value="location">Location</option>
+				<option value="Name">Name</option>
+			</select><br />
+			<label>Search: </label>
+			<input type="text" name="searchterm" />
+			<input type="submit" value="Go" />
+		</form>	
+	</body>	
+</html>
