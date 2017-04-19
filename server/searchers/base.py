@@ -10,9 +10,14 @@ class SearchResult(object):
 		self.total_relevant = total_relevant
 
 	def calculate_precision(self, relevant):
+		if float(self.top_relevant) == 0:
+			return 0
 		return float(relevant) / float(self.top_relevant)
 
 	def calculate_recall(self, relevant):
+		if float(self.total_relevant) == 0:
+			return 0
+
 		return float(relevant) / float(self.total_relevant)
 
 	def calculate_f_measure(self, relevant):

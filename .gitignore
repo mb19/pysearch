@@ -91,3 +91,5 @@ ENV/
 # Custom Ignores
 .DS_Store
 stats.json
+**/results
+**/final-statistics.json

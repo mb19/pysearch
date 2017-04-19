@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, request, redirect, make_respo
 from searchers.all import build_searcher
 from searchers.base import SearchResult
 import httplib2
-import urllib2
+import urllib
 
 app = Flask(__name__)
 
@@ -109,11 +109,10 @@ class Server(object):
 		if top == '' or total == '' or relevant == '':
 			return makeError()
 
-		if int(top) == 0 or int(total) == 0:
-			return makeError()
+		intTop = int(top)
+		intTotal = int(total)
 
 		stats = SearchResult(top, total)
-		print stats.serialize()
 		return jsonify({
 			'precision': stats.calculate_precision(relevant),
 			'recall': stats.calculate_recall(relevant),

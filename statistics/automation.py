@@ -210,11 +210,13 @@ class Statistics(object):
 	def process_scores(self):
 		id = 0
 		total = len(self.configs)
+
 		results = []
 		for config in self.configs:
 			result = self.__handle_metric(id)
 			del config['mapping']
 			data = {
+				'id': id,
 				'query': config,
 				'results': result
 			}
@@ -229,6 +231,7 @@ class Statistics(object):
 		filename = 'statistics/final-statistics.json'
 		with open(filename, 'w') as output:
 			output.write(json.dumps(results, sort_keys=True, indent=4))
+		print "Results written out to statistics/final-statistics.json"
 
 	def __handle_metric(self, id):
 		scorer = Scorer(id, self.configs[id])
@@ -243,21 +246,32 @@ class Statistics(object):
 
 		relevantCount = calculate_relevant(payload)
 
-		return self.__post_stats(payload['stats']['top_relevant'], 
+		return self.__post_stats(id, payload['stats']['top_relevant'], 
 			payload['stats']['total_relevant'], 
 			relevantCount)
 
-	def __post_stats(self, top, total, relevant):
+	def __post_stats(self, id, top, total, relevant):
 		url = 'http://127.0.0.1:5000/api/measure'
 		body = {
 			'top': int(top),
 			'total': int(total),
 			'relevant': int(relevant)
 		}
+
 		response = post(url, data = body)
+
 		return response.json()
 
+def args():
+	parser = argparse.ArgumentParser(description='Used for testing different queries.')
+	parser.add_argument('--build', action='store_true', help='rebuilds the results folder that contains the query results')
+	parser.add_argument('--process', action='store_true', help='calculates the score of all the results in the results folder')
+	return vars(parser.parse_args())
+
+input = args()
 stats = Statistics()
 
-#stats.build_data()
-print stats.process_scores()
+if input['build']:
+	stats.build_data()
+elif input['process']:
+	stats.process_scores()

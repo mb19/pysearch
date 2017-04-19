@@ -1,7 +1,0 @@
-database	table	query	name	rating	city	state	url	Is Relevant?
-mongo	players	phillip	Jordan Phillips	Defensive Lineman	97	Miami Dolphins	https://en.wikipedia.org/wiki/Jordan_Phillips	0
-mongo	players	phillip	Phillip Dorsett	Wide Receiver	15	Indianapolis Colts	https://en.wikipedia.org/wiki/Phillip_Dorsett	0
-mongo	players	phillip	Phillip Supernaw	Tight End	89	Tennessee Titans	https://en.wikipedia.org/wiki/Phillip_Supernaw	0
-mongo	players	phillip	Phillip Gaines	Defensive Back	23	Kansas City Chiefs	https://en.wikipedia.org/wiki/Phillip_Gaines	0
-mongo	players	phillip	Adrian Phillips	Defensive Back	31	Los Angeles Chargers	https://en.wikipedia.org/wiki/Adrian_Phillips	0
-mongo	players	phillip	John Phillips	Tight End	86	New Orleans Saints	https://en.wikipedia.org/wiki/John_Phillips_(American_football)	0
