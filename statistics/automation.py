@@ -2,6 +2,7 @@
 from requests import request, post
 import os
 import json
+import argparse
 
 
 class Configuration(object):
@@ -201,7 +202,7 @@ class Statistics(object):
 	def build_data(self):
 		id = 0
 		total = len(self.configs)
-		for config in configs:
+		for config in self.configs:
 			print "Running pass {0}/{1}\n".format(id + 1, total)
 			nextPass = Pass(id, self.configs[id])
 			nextPass.execute()

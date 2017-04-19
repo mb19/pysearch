@@ -27,9 +27,10 @@ test-code:
 
 test: test-code
 
-get-stats:
-	python statistics/automation.py
+build-stats:
+	python statistics/automation.py --build
 
-stats: get-stats
+process-stats:
+	python statistics/automation.py --process
 
 all: db index server
