@@ -27,4 +27,9 @@ test-code:
 
 test: test-code
 
+get-stats:
+	python statistics/automation.py
+
+stats: get-stats
+
 all: db index server
