@@ -131,7 +131,11 @@ class Server(object):
 
 		results = fetch_data(query, dbType, table)
 
-		return render_template('results.html', query=query, results=results['documents'])
+		return render_template('results.html', 
+			query=query, 
+			results=results['documents'], 
+			actual=results['stats'].top_relevant, 
+			total=results['stats'].total_relevant)
 
 	def run(self, isDebug):
 		app.run(debug=isDebug)
