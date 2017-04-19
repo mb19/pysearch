@@ -1,0 +1,3 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+whoosh	restaurants	phillip	Phillips Seafood Express	2.5	Aberdeen	Maryland	https://www.yelp.com/biz/phillips-seafood-express-aberdeen?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+whoosh	restaurants	phillip	Phillips Avenue Diner	4.0	Sioux Falls	South Dakota	https://www.yelp.com/biz/phillips-avenue-diner-sioux-falls?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

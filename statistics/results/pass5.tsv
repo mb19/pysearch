@@ -1,0 +1,3 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	players	pepper	Taybor Pepper	Special Teams	72	Green Bay Packers	https://en.wikipedia.org/w/index.php?title=Taybor_Pepper&action=edit&redlink=1	0
+mongo	players	pepper	Julius Peppers	Defensive Lineman	90	Carolina Panthers	https://en.wikipedia.org/wiki/Julius_Peppers	0

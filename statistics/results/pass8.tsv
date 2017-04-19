@@ -1,0 +1,11 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	restaurants	bar	Cove Bar	4.0	Anaheim	CA	https://www.yelp.com/biz/cove-bar-anaheim?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Five Bar	4.5	Mobile	AL	https://www.yelp.com/biz/five-bar-mobile?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	The Cardinal Bar	4.5	Raleigh	NC	https://www.yelp.com/biz/the-cardinal-bar-raleigh?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Bar Pazzo	4.5	Scranton	PA	https://www.yelp.com/biz/bar-pazzo-scranton?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Noodle Bar	4.0	Seaside	CA	https://www.yelp.com/biz/noodle-bar-seaside?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Zoo bar	5.0	Sebastian	FL	https://www.yelp.com/biz/zoo-bar-sebastian?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Five Bar	4.5	Knoxville	TN	https://www.yelp.com/biz/five-bar-knoxville-4?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Donut Bar	4.5	Las Vegas	NV	https://www.yelp.com/biz/donut-bar-las-vegas?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	The Breakfast Bar	4.0	Long Beach	CA	https://www.yelp.com/biz/the-breakfast-bar-long-beach?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	bar	Noodle Bar	4.0	Marina	CA	https://www.yelp.com/biz/noodle-bar-marina-2?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

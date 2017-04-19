@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, request, redirect, make_respo
 from searchers.all import build_searcher
 from searchers.base import SearchResult
 import httplib2
+import urllib2
 
 app = Flask(__name__)
 
@@ -20,6 +21,7 @@ def fetch_data(term, db, lib, limit=10):
 	elif db == 'whoosh':
 		# Queries the whoosh index for the user specified table.
 		results = searcher.whoosh.search(term, lib, limit)
+
 	return results
 
 
@@ -130,6 +132,9 @@ class Server(object):
 		table = data.get('library')
 
 		results = fetch_data(query, dbType, table)
+
+		for doc in results['documents']:
+			doc['document']['prop5'] = urllib.quote_plus(doc['document']['prop5'])
 
 		return render_template('results.html', 
 			query=query, 

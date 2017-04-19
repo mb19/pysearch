@@ -1,0 +1,330 @@
+[
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "apple"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "apple"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "apple"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "apple"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "pepper"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "pepper"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "pepper"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "pepper"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "bar"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "bar"
+        }, 
+        "results": {
+            "error": "Missing arguements"
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "bar"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "bar"
+        }, 
+        "results": {
+            "error": "Missing arguements"
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "john"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "john"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "john"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "john"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "phillip"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "phillip"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "phillip"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "phillip"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "Seattle"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "Seattle"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "Seattle"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "Seattle"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "Oregon"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "Oregon"
+        }, 
+        "results": {
+            "error": "Missing arguements"
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "Oregon"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0.0, 
+            "recall": 0.0
+        }
+    }, 
+    {
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "Oregon"
+        }, 
+        "results": {
+            "error": "Missing arguements"
+        }
+    }
+]

@@ -1,0 +1,11 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	players	john	John Denney	Special Teams	92	Miami Dolphins	https://en.wikipedia.org/wiki/John_Denney	0
+mongo	players	john	John Miller	Offensive Lineman	76	Buffalo Bills	https://en.wikipedia.org/wiki/John_Miller_(offensive_lineman,_born_1993)	0
+mongo	players	john	John Ojo	Defensive Back	--	New York Jets	https://en.wikipedia.org/wiki/John_Ojo	0
+mongo	players	john	John Urschel	Offensive Lineman	64	Baltimore Ravens	https://en.wikipedia.org/wiki/John_Urschel	0
+mongo	players	john	John Greco	Offensive Lineman	77	Cleveland Browns	https://en.wikipedia.org/wiki/John_Greco	0
+mongo	players	john	John Simon	Linebacker	51	Indianapolis Colts	https://en.wikipedia.org/wiki/John_Simon_(linebacker)	0
+mongo	players	john	John Lotulelei	Linebacker	47	Dallas Cowboys	https://en.wikipedia.org/wiki/John_Lotulelei	0
+mongo	players	john	John Jerry	Offensive Lineman	77	New York Giants	https://en.wikipedia.org/wiki/John_Jerry	0
+mongo	players	john	John Kling	Offensive Lineman	--	Washington Redskins	https://en.wikipedia.org/w/index.php?title=John_Kling_(American_football)&action=edit&redlink=1	0
+mongo	players	john	John Jenkins	Defensive Lineman	95	Chicago Bears	https://en.wikipedia.org/wiki/John_Jenkins_(defensive_tackle)	0

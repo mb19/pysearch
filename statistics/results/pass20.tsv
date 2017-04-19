@@ -1,0 +1,11 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	restaurants	Seattle	Chan Seattle	4.5	Seattle	WA	https://www.yelp.com/biz/chan-seattle-seattle-2?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Rocco's	4.5	Seattle	WA	https://www.yelp.com/biz/roccos-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Piroshky Piroshky	4.5	Seattle	WA	https://www.yelp.com/biz/piroshky-piroshky-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Biscuit Bitch	4.0	Seattle	WA	https://www.yelp.com/biz/biscuit-bitch-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Tacos Chukis	4.5	Seattle	WA	https://www.yelp.com/biz/tacos-chukis-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	The Crumpet Shop	4.5	Seattle	WA	https://www.yelp.com/biz/the-crumpet-shop-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Serious Pie	4.0	Seattle	WA	https://www.yelp.com/biz/serious-pie-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Toulouse Petit	4.0	Seattle	WA	https://www.yelp.com/biz/toulouse-petit-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Cook Weaver	4.5	Seattle	WA	https://www.yelp.com/biz/cook-weaver-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Seattle	Pike Place Chowder	4.5	Seattle	WA	https://www.yelp.com/biz/pike-place-chowder-seattle?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

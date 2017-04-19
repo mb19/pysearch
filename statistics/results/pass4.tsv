@@ -1,0 +1,11 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	restaurants	pepper	Peppers	4.5	Myrtle Beach	SC	https://www.yelp.com/biz/peppers-myrtle-beach?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Cracked Pepper	4.5	Fargo	ND	https://www.yelp.com/biz/cracked-pepper-fargo?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Pepper Cafe	4.5	Gilbert	AZ	https://www.yelp.com/biz/pepper-cafe-gilbert?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Thai Pepper	3.5	Lubbock	TX	https://www.yelp.com/biz/thai-pepper-lubbock?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Thai Pepper	4.5	Roseville	CA	https://www.yelp.com/biz/thai-pepper-roseville?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Salt & Pepper	4.5	Worcester	MA	https://www.yelp.com/biz/salt-and-pepper-worcester?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Pepper Tree	4.5	Palm Bay	FL	https://www.yelp.com/biz/pepper-tree-palm-bay?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Flower Pepper Restaurant	4.0	Boulder	CO	https://www.yelp.com/biz/flower-pepper-restaurant-boulder?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Pepper's Street Tacos	4.0	Grand Prairie	TX	https://www.yelp.com/biz/peppers-street-tacos-grand-prairie?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	pepper	Red Pepper Diner	5.0	Newburgh	NY	https://www.yelp.com/biz/red-pepper-diner-wappingers-falls-3?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

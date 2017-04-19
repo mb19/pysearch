@@ -1,0 +1,11 @@
+database	table	query	name	rating	city	state	url	Is Relevant?
+mongo	restaurants	Oregon	Papa's Soul Food Kitchen	4.0	Eugene	OR	https://www.yelp.com/biz/papas-soul-food-kitchen-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Every Day Kine Grindz From Hawaii	5.0	Eugene	OR	https://www.yelp.com/biz/every-day-kine-grindz-from-hawaii-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Haybaby	5.0	Eugene	OR	https://www.yelp.com/biz/haybaby-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Snack Shack	4.5	Eugene	OR	https://www.yelp.com/biz/snack-shack-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Toshi's Ramen	4.0	Eugene	OR	https://www.yelp.com/biz/toshis-ramen-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Newman's Fish Co	4.5	Eugene	OR	https://www.yelp.com/biz/newmans-fish-co-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Cheba Hut	4.5	Eugene	OR	https://www.yelp.com/biz/cheba-hut-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Big Kahuna Bowls	5.0	Eugene	OR	https://www.yelp.com/biz/big-kahuna-bowls-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	Mama Mayra's Kitchen	5.0	Eugene	OR	https://www.yelp.com/biz/mama-mayras-kitchen-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	Oregon	The Sandwich League	4.5	Eugene	OR	https://www.yelp.com/biz/the-sandwich-league-eugene?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

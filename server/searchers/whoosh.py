@@ -10,10 +10,4 @@ class WhooshSearch(IndexSearcher):
 
 	def search(self, text, table, limit=10):
 		manager = IndexManager(self.__indexName, None)
-		results = manager.search(text, table, limit)
-
-		# loop over results to url encode url for navigation.
-		for doc in results['documents']:
-			doc['document']['prop5'] = urllib.quote_plus(doc['document']['prop5'])
-
-		return results
+		return manager.search(text, table, limit)
