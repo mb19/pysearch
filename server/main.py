@@ -128,6 +128,11 @@ class Server(object):
 		query = data.get('searchterm')
 		dbType = data.get('searchDatabase')
 		table = data.get('library')
+		propNames = []
+		if table == 'players': 
+			propNames = ['Name', 'Position', 'Number', 'Team' ]
+		else:
+			propNames = ['Name', 'Rating', 'City', 'State']
 
 		results = fetch_data(query, dbType, table)
 
@@ -135,7 +140,8 @@ class Server(object):
 			query=query, 
 			results=results['documents'], 
 			actual=results['stats'].top_relevant, 
-			total=results['stats'].total_relevant)
+			total=results['stats'].total_relevant,
+			propNames=propNames)
 
 	def run(self, isDebug):
 		app.run(debug=isDebug)
