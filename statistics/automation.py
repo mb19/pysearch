@@ -7,27 +7,35 @@ import argparse
 
 class Configuration(object):
 	
-	terms = ['apple', 'pepper', 'bar', 'john', 'phillip', 'Seattle', 'Oregon']
+	player_terms = ['wilson', 'back', '10', 'special', 'defensive']
+	rest_terms = ['apple', 'orange', 'bar', 'grill', 'bar and grill']
+
 	databases = ['mongo', 'whoosh']
 	tables = ['restaurants', 'players']
 
 	def build(self):
 		parameters = []
-		for term in self.terms:
+
+		for term in self.player_terms:
 			for db in self.databases:
-				for table in self.tables:
-					param = {
-						'term': term,
-						'db': db,
-						'table': table,
-						'mapping': {}
-					}
-					if db == 'player':
-						param['mapping'] = self.__player_mapping()
-					else:
-						param['mapping'] = self.__restaurant_mapping()
-						
-					parameters.append(param)
+				param = {
+					'term': term,
+					'db': db,
+					'table': 'players',
+					'mapping': self.__player_mapping()
+				}
+				parameters.append(param)
+
+		for term in self.rest_terms:
+			for db in self.databases:
+				param = {
+					'term': term,
+					'db': db,
+					'table': 'restaurants',
+					'mapping': self.__restaurant_mapping()
+				}
+				parameters.append(param)
+
 		return parameters
 
 	def __player_mapping(self):
