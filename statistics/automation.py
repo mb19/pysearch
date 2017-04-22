@@ -7,8 +7,8 @@ import argparse
 
 class Configuration(object):
 	
-	player_terms = ['wilson', 'back', '10', 'special', 'defensive']
-	rest_terms = ['apple', 'orange', 'bar', 'grill', 'bar and grill']
+	player_terms = ['seattle 3', 'quarterback oregon', '10', 'special', 'defensive']
+	rest_terms = ['apple seattle', 'orange', 'washington burgers', 'oregon cake', 'bar and grill']
 
 	databases = ['mongo', 'whoosh']
 	tables = ['restaurants', 'players']
@@ -130,7 +130,7 @@ class Pass(object):
 	def __make_row(self, row):
 		for key in row:
 			if type(row[key]) == unicode:
-				row[key] = row[key].replace(u'\ufeff', '')
+				row[key] = row[key].replace(u'\ufeff', '').replace(u'\u0113', '')
 
 		return "{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\n".format(
 			self.payload['db'],

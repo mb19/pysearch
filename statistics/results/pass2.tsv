@@ -1,0 +1,11 @@
+database	table	query	name	position	number	team	url	Is Relevant?
+mongo	players	quarterback oregon	Josh Johnson	Quarterback	8	New York Giants	https://en.wikipedia.org/wiki/Josh_Johnson_(quarterback)	0
+mongo	players	quarterback oregon	Ryan Griffin	Quarterback	4	Tampa Bay Buccaneers	https://en.wikipedia.org/wiki/Ryan_Griffin_(quarterback)	0
+mongo	players	quarterback oregon	Cardale Jones	Quarterback	7	Buffalo Bills	https://en.wikipedia.org/wiki/Cardale_Jones	0
+mongo	players	quarterback oregon	Tyrod Taylor	Quarterback	5	Buffalo Bills	https://en.wikipedia.org/wiki/Tyrod_Taylor	0
+mongo	players	quarterback oregon	Josh Woodrum	Quarterback	8	Buffalo Bills	https://en.wikipedia.org/wiki/Josh_Woodrum	0
+mongo	players	quarterback oregon	T. J. Yates	Quarterback	9	Buffalo Bills	https://en.wikipedia.org/wiki/T._J._Yates	0
+mongo	players	quarterback oregon	Brandon Doughty	Quarterback	6	Miami Dolphins	https://en.wikipedia.org/wiki/Brandon_Doughty	0
+mongo	players	quarterback oregon	David Fales	Quarterback	--	Miami Dolphins	https://en.wikipedia.org/wiki/David_Fales	0
+mongo	players	quarterback oregon	Matt Moore	Quarterback	8	Miami Dolphins	https://en.wikipedia.org/wiki/Matt_Moore_(American_football)	0
+mongo	players	quarterback oregon	Ryan Tannehill	Quarterback	17	Miami Dolphins	https://en.wikipedia.org/wiki/Ryan_Tannehill	0

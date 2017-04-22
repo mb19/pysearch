@@ -78,7 +78,7 @@ class RestaurantSearch(TableSearch):
 				'prop1': document['Name'],
 				'prop2': document['Rating'],
 				'prop3': document['City'],
-				'prop4': document['State']['abbr'],
+				'prop4': document['State']['name'],
 				'prop5': document['URL']
 			},
 			'score': document['score']
@@ -89,7 +89,7 @@ class RestaurantSearch(TableSearch):
 			'Name': 1,
 			'Rating': 1,
 			'City': 1,
-			'State.abbr': 1,
+			'State.name': 1,
 			'URL': 1,
 			'score': self.meta()
 		}
