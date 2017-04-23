@@ -1,6 +1,6 @@
 database	table	query	name	rating	city	state	url	Is Relevant?
-mongo	restaurants	orange	Cortina's Orange	4.5	Orange	California	https://www.yelp.com/biz/cortinas-orange-orange-4?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
-mongo	restaurants	orange	Tikiyaki	4.5	Orange	California	https://www.yelp.com/biz/tikiyaki-orange?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
+mongo	restaurants	orange	Cortina's Orange	4.5	Orange	California	https://www.yelp.com/biz/cortinas-orange-orange-4?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	1
+mongo	restaurants	orange	Tikiyaki	4.5	Orange	California	https://www.yelp.com/biz/tikiyaki-orange?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	1
 mongo	restaurants	orange	Nguyen's Kitchen	4.0	Orange	California	https://www.yelp.com/biz/nguyens-kitchen-orange?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
 mongo	restaurants	orange	Urban Cactus	4.5	Orange	California	https://www.yelp.com/biz/urban-cactus-orange?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0
 mongo	restaurants	orange	Cali Tacos	4.0	Orange	California	https://www.yelp.com/biz/cali-tacos-orange?adjust_creative=REiAz8Bdo4ZDdqoSeZ_CHw&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=REiAz8Bdo4ZDdqoSeZ_CHw	0

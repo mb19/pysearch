@@ -8,7 +8,7 @@ import argparse
 class Configuration(object):
 	
 	player_terms = ['seattle 3', 'quarterback oregon', '10', 'special', 'defensive']
-	rest_terms = ['apple seattle', 'orange', 'washington burgers', 'oregon cake', 'bar and grill']
+	rest_terms = ['apple seattle', 'house', 'washington burgers', 'oregon cake', 'bar and grill']
 
 	databases = ['mongo', 'whoosh']
 	tables = ['restaurants', 'players']

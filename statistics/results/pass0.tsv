@@ -1,11 +1,11 @@
 database	table	query	name	position	number	team	url	Is Relevant?
-mongo	players	seattle 3	Russell Wilson	Quarterback	3	Seattle Seahawks	https://en.wikipedia.org/wiki/Russell_Wilson	0
+mongo	players	seattle 3	Russell Wilson	Quarterback	3	Seattle Seahawks	https://en.wikipedia.org/wiki/Russell_Wilson	1
 mongo	players	seattle 3	Andrew Franks	Special Teams	3	Miami Dolphins	https://en.wikipedia.org/wiki/Andrew_Franks	0
 mongo	players	seattle 3	Stephen Gostkowski	Special Teams	3	New England Patriots	https://en.wikipedia.org/wiki/Stephen_Gostkowski	0
 mongo	players	seattle 3	Josh Boyce	Wide Receiver	3	Cleveland Browns	https://en.wikipedia.org/wiki/Josh_Boyce	0
 mongo	players	seattle 3	Cody Parkey	Special Teams	3	Cleveland Browns	https://en.wikipedia.org/wiki/Cody_Parkey	0
-mongo	players	seattle 3	Landry Jones	Quarterback	3	Pittsburgh Steelers	https://en.wikipedia.org/wiki/Landry_Jones	0
-mongo	players	seattle 3	Tom Savage	Quarterback	3	Houston Texans	https://en.wikipedia.org/wiki/Tom_Savage_(American_football)	0
+mongo	players	seattle 3	Landry Jones	Quarterback	3	Pittsburgh Steelers	https://en.wikipedia.org/wiki/Landry_Jones	1
+mongo	players	seattle 3	Tom Savage	Quarterback	3	Houston Texans	https://en.wikipedia.org/wiki/Tom_Savage_(American_football)	1
 mongo	players	seattle 3	Devon Bell	Special Teams	3	Indianapolis Colts	https://en.wikipedia.org/wiki/Devon_Bell	0
 mongo	players	seattle 3	Brad Nortman	Special Teams	3	Jacksonville Jaguars	https://en.wikipedia.org/wiki/Brad_Nortman	0
-mongo	players	seattle 3	EJ Manuel	Quarterback	3	Oakland Raiders	https://en.wikipedia.org/wiki/EJ_Manuel	0
+mongo	players	seattle 3	EJ Manuel	Quarterback	3	Oakland Raiders	https://en.wikipedia.org/wiki/EJ_Manuel	1
