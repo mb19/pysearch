@@ -148,4 +148,4 @@ class Server(object):
 			propNames=propNames)
 
 	def run(self, isDebug):
-		app.run(debug=isDebug)
+		app.run(debug=isDebug, host="0.0.0.0")
