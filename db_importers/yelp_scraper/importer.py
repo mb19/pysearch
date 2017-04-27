@@ -23,7 +23,7 @@ class YelpImporter(object):
             ('City', TEXT),
             ('URL', TEXT),
             ('Rating', TEXT),
-            ('State', TEXT),], default_language='english')
+            ('State.name', TEXT),], default_language='english')
 
     def __buildRestaurant(self, city, state, business):
         result = {

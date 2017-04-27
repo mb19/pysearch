@@ -6,7 +6,7 @@ A basic server in Python using Jinja to implement a basic web interface for sear
 
 ### Install Instructions
 The server requires an environment using Python 2.7. The required packages can be installed using:
-`make install`
+`make install`.
 
 ### Running
 
@@ -26,13 +26,16 @@ To completely rebuild the database, run: `make db`.
 
 To install the tools, reubuild the database and index, and start the server when done, run `make all`.
 
+### Advanced 
+The current version of the application can be found [here](http://docker-lb.trafficmanager.net/). 
 
-### Files and Folders
-* server.py - Main server file
-* /templates - html files for user interface
-* /static - Static files including style sheets
-* README
+The website is deployed to Azure using a Docker container built with the Dockerfile included in this
+repository. For fun, this application is hosted on two separate virtual machines using Docker (in swarm mode) 
+and an Azure load balancer.
 
-### Documentation
-* [Jinja](http://jinja.pocoo.org/docs/2.9/)
-* [Flask](http://flask.pocoo.org/)
+To run the application locally using Docker, run the following command:
+```
+docker run --rm sonoilmedioco/pysearch:v4
+```
+
+The public Docker Hub repo can be found [here](https://hub.docker.com/r/sonoilmedico/pysearch/).

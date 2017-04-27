@@ -1,0 +1,11 @@
+database	table	query	name	position	number	team	url	Is Relevant?
+mongo	players	special	Reid Ferguson	Special Teams	69	Buffalo Bills	https://en.wikipedia.org/w/index.php?title=Reid_Ferguson&action=edit&redlink=1	1
+mongo	players	special	Steven Hauschka	Special Teams	4	Buffalo Bills	https://en.wikipedia.org/wiki/Steven_Hauschka	1
+mongo	players	special	Colton Schmidt	Special Teams	6	Buffalo Bills	https://en.wikipedia.org/wiki/Colton_Schmidt	1
+mongo	players	special	Winston Chapman	Special Teams	43	Miami Dolphins	https://en.wikipedia.org/w/index.php?title=Winston_Chapman&action=edit&redlink=1	1
+mongo	players	special	Matt Darr	Special Teams	4	Miami Dolphins	https://en.wikipedia.org/wiki/Matt_Darr	1
+mongo	players	special	John Denney	Special Teams	92	Miami Dolphins	https://en.wikipedia.org/wiki/John_Denney	1
+mongo	players	special	Andrew Franks	Special Teams	3	Miami Dolphins	https://en.wikipedia.org/wiki/Andrew_Franks	1
+mongo	players	special	Ryan Allen	Special Teams	6	New England Patriots	https://en.wikipedia.org/wiki/Ryan_Allen_(American_football)	1
+mongo	players	special	Joe Cardona	Special Teams	49	New England Patriots	https://en.wikipedia.org/wiki/Joe_Cardona	1
+mongo	players	special	Stephen Gostkowski	Special Teams	3	New England Patriots	https://en.wikipedia.org/wiki/Stephen_Gostkowski	1

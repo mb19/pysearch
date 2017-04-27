@@ -7,18 +7,20 @@
 	</head>
 
 	<body>
-
 		<h2>
-			<div id='redText'>Results for: {{query}}</div>
+			<div>You searched for: {{query}}</div>
 		</h2>
+		<h4>
+			<div>Showing top {{actual}} of {{total}} relevant results</div>
+		</h4>
 		
 		<table>
 			<thead>
 				<tr>
-					<th>Library</th>
-					<th>Name</th>
-					<th>Property1</th>
-					<th>State</th>
+					<th>{{propNames[0]}}</th>
+					<th>{{propNames[1]}}</th>
+					<th>{{propNames[2]}}</th>
+					<th>{{propNames[3]}}</th>
 					<th>Link</th>
 					<th>Score</th>
 				</tr>

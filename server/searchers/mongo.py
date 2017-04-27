@@ -1,5 +1,5 @@
 
-from base import IndexSearcher
+from base import IndexSearcher, SearchResult
 import urllib
 import pymongo
 
@@ -31,15 +31,20 @@ class TableSearch(IndexSearcher):
 	def normalize(self, document):
 		raise NotImplementedError("Must implement to use.")
 
-	def search(self, text):
+	def search(self, text, limit=10):
 		query = self.query(text)
 
 		projection = self.projection()
 
 		meta = self.meta()
 
-		results = self.table.find(query, projection).sort([('score', self.meta())]).limit(10)
-		return [self.normalize(rest) for rest in results]
+		query = self.table.find(query, projection).sort([('score', self.meta())]).limit(limit)
+		return {
+			'documents': [self.normalize(rest) for rest in query],
+			'stats': SearchResult(query.count(True), query.count())
+		}
+
+		return 
 
 class PlayerSearch(TableSearch):
 
@@ -50,7 +55,7 @@ class PlayerSearch(TableSearch):
 				'prop2': document['position']['name'],
 				'prop3': document['number'],
 				'prop4': document['team']['name'],
-				'prop5': urllib.quote_plus(document['url'])
+				'prop5': document['url']
 			},
 			'score': document['score']
 		}
@@ -73,8 +78,8 @@ class RestaurantSearch(TableSearch):
 				'prop1': document['Name'],
 				'prop2': document['Rating'],
 				'prop3': document['City'],
-				'prop4': document['State']['abbr'],
-				'prop5': urllib.quote_plus(document['URL'])
+				'prop4': document['State']['name'],
+				'prop5': document['URL']
 			},
 			'score': document['score']
 		}
@@ -84,7 +89,7 @@ class RestaurantSearch(TableSearch):
 			'Name': 1,
 			'Rating': 1,
 			'City': 1,
-			'State.abbr': 1,
+			'State.name': 1,
 			'URL': 1,
 			'score': self.meta()
 		}

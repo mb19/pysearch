@@ -22,4 +22,15 @@ run-server:
 
 server: run-server
 
-all: install db index server
+test-code: 
+	python server/searchers/tests.py
+
+test: test-code
+
+build-stats:
+	python statistics/automation.py --build
+
+process-stats:
+	python statistics/automation.py --process
+
+all: db index server

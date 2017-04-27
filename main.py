@@ -50,4 +50,3 @@ if __name__ == "__main__":
 		app.import_database()
 	elif args['server']:
 		app.run_server()
-	

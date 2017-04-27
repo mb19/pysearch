@@ -1,0 +1,11 @@
+database	table	query	name	position	number	team	url	Is Relevant?
+mongo	players	defensive	Ryan Davis	Defensive Lineman	56	Buffalo Bills	https://en.wikipedia.org/wiki/Ryan_Davis_(American_football)	1
+mongo	players	defensive	Jerry Hughes	Defensive Lineman	55	Buffalo Bills	https://en.wikipedia.org/wiki/Jerry_Hughes	1
+mongo	players	defensive	Shaq Lawson	Defensive Lineman	90	Buffalo Bills	https://en.wikipedia.org/wiki/Shaq_Lawson	1
+mongo	players	defensive	Jake Metz	Defensive Lineman	96	Buffalo Bills	https://en.wikipedia.org/wiki/Jake_Metz	1
+mongo	players	defensive	Ian Seau	Defensive Lineman	91	Buffalo Bills	https://en.wikipedia.org/w/index.php?title=Ian_Seau_(defensive_end)&action=edit&redlink=1	1
+mongo	players	defensive	Max Valles	Defensive Lineman	54	Buffalo Bills	https://en.wikipedia.org/wiki/Max_Valles	1
+mongo	players	defensive	Adolphus Washington	Defensive Lineman	92	Buffalo Bills	https://en.wikipedia.org/wiki/Adolphus_Washington	1
+mongo	players	defensive	Kyle Williams	Defensive Lineman	95	Buffalo Bills	https://en.wikipedia.org/wiki/Kyle_Williams_(defensive_tackle)	1
+mongo	players	defensive	Jerel Worthy	Defensive Lineman	94	Buffalo Bills	https://en.wikipedia.org/wiki/Jerel_Worthy	1
+mongo	players	defensive	Colt Anderson	Defensive Back	33	Buffalo Bills	https://en.wikipedia.org/wiki/Colt_Anderson	1

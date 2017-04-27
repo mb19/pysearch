@@ -5,6 +5,10 @@ from whoosh.index import create_in, open_dir
 from whoosh.analysis import StemmingAnalyzer
 from whoosh.qparser import QueryParser, MultifieldParser
 from whoosh import scoring
+from whoosh.query import Not, And
+
+# User imports
+from ..searchers.base import SearchResult
 
 # MongoDB imports
 from bson.objectid import ObjectId
@@ -12,23 +16,6 @@ from bson.objectid import ObjectId
 # System imports
 import os.path
 import datetime
-
-class QueryResults(object):
-	""" Contains the query time and the documents that were returned. """
-
-	def __init__(self, queryResult, table):
-
-		self.documents = []
-		""" The list of documents returned by the search. """
-		for i in range(0, queryResult.scored_length()):
-			doc = queryResult[i].fields()
-			score = queryResult.score(i)
-
-			if doc['prop6'] == table:
-				self.documents.append({ 'score': score, 'document': doc })
-
-		self.time = queryResult.runtime
-		""" The total query time. This excludes mapping done by this code. """
 
 class SchemaBuilder(object):
 	""" Provides a way to build a normalized schema for any document type. """
@@ -78,7 +65,7 @@ class IndexManager(object):
 
 		return index
 
-	def search(self, text, table):
+	def search(self, text, table, limit=10):
 		""" Searches the index for anything containing the text. """
 
 		schema = self.__get_schema()
@@ -87,9 +74,29 @@ class IndexManager(object):
 		# Here we use TF-IDF because that is what our mongo search will use.
 
 		with index.searcher(weighting=scoring.TF_IDF()) as searcher:
-			query = MultifieldParser(schema.names(), schema=index.schema).parse(text)
-			results = searcher.search(query)
-			return QueryResults(results, table)
+			names = schema.names()
+			names.remove('prop6')
+			
+			query = MultifieldParser(names, schema=index.schema).parse(text)
+			results = searcher.search(query, limit=None)
+
+			return self.__build_results(results, table, limit)
+
+	def __build_results(object, queryResult, table, limit=10):
+		""" Contains the query time and the documents that were returned. """
+		documents = []
+
+		for i in range(0, queryResult.scored_length()):
+			doc = queryResult[i].fields()
+			score = queryResult.score(i)
+
+			if doc['prop6'] == table and len(documents) < limit:
+				documents.append({ 'score': score, 'document': doc })
+		return {
+			'documents': documents,
+			'stats': SearchResult(len(documents), queryResult.scored_length())
+
+		}
 
 	def __get_index(self, full_schema, shouldClean):
 		""" Creates an index if necessary and returns it. """
@@ -138,7 +145,7 @@ class IndexManager(object):
 			document['prop1'] = unicode(rest['Name'])
 			document['prop2'] = unicode(rest['Rating'])
 			document['prop3'] = unicode(rest['City'])
-			document['prop4'] = unicode(rest['State']['abbr'])
+			document['prop4'] = unicode(rest['State']['name'])
 			document['prop5'] = unicode(rest['URL'])
 			document['prop6'] = u'restaurants'
 

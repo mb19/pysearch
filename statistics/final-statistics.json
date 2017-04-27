@@ -1,0 +1,262 @@
+[
+    {
+        "id": 0, 
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "seattle 3"
+        }, 
+        "results": {
+            "f-measure": 0.07692307692307691, 
+            "precision": 0.4, 
+            "recall": 0.0425531914893617
+        }
+    }, 
+    {
+        "id": 1, 
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "seattle 3"
+        }, 
+        "results": {
+            "f-measure": 0.03809523809523809, 
+            "precision": 0.2, 
+            "recall": 0.021052631578947368
+        }
+    }, 
+    {
+        "id": 2, 
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "quarterback oregon"
+        }, 
+        "results": {
+            "f-measure": 0.1923076923076923, 
+            "precision": 1.0, 
+            "recall": 0.10638297872340426
+        }
+    }, 
+    {
+        "id": 3, 
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "quarterback oregon"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0, 
+            "recall": 0
+        }
+    }, 
+    {
+        "id": 4, 
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "10"
+        }, 
+        "results": {
+            "f-measure": 0.625, 
+            "precision": 1.0, 
+            "recall": 0.45454545454545453
+        }
+    }, 
+    {
+        "id": 5, 
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "10"
+        }, 
+        "results": {
+            "f-measure": 0.5, 
+            "precision": 1.0, 
+            "recall": 0.3333333333333333
+        }
+    }, 
+    {
+        "id": 6, 
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "special"
+        }, 
+        "results": {
+            "f-measure": 0.1492537313432836, 
+            "precision": 1.0, 
+            "recall": 0.08064516129032258
+        }
+    }, 
+    {
+        "id": 7, 
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "special"
+        }, 
+        "results": {
+            "f-measure": 0.1492537313432836, 
+            "precision": 1.0, 
+            "recall": 0.08064516129032258
+        }
+    }, 
+    {
+        "id": 8, 
+        "query": {
+            "db": "mongo", 
+            "table": "players", 
+            "term": "defensive"
+        }, 
+        "results": {
+            "f-measure": 0.027210884353741496, 
+            "precision": 1.0, 
+            "recall": 0.013793103448275862
+        }
+    }, 
+    {
+        "id": 9, 
+        "query": {
+            "db": "whoosh", 
+            "table": "players", 
+            "term": "defensive"
+        }, 
+        "results": {
+            "f-measure": 0.027210884353741496, 
+            "precision": 1.0, 
+            "recall": 0.013793103448275862
+        }
+    }, 
+    {
+        "id": 10, 
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "apple seattle"
+        }, 
+        "results": {
+            "f-measure": 0.07692307692307693, 
+            "precision": 0.2, 
+            "recall": 0.047619047619047616
+        }
+    }, 
+    {
+        "id": 11, 
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "apple seattle"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0, 
+            "recall": 0
+        }
+    }, 
+    {
+        "id": 12, 
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "house"
+        }, 
+        "results": {
+            "f-measure": 0.06896551724137931, 
+            "precision": 0.2, 
+            "recall": 0.041666666666666664
+        }
+    }, 
+    {
+        "id": 13, 
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "house"
+        }, 
+        "results": {
+            "f-measure": 0.13793103448275862, 
+            "precision": 0.4, 
+            "recall": 0.08333333333333333
+        }
+    }, 
+    {
+        "id": 14, 
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "washington burgers"
+        }, 
+        "results": {
+            "f-measure": 0.04405286343612334, 
+            "precision": 1.0, 
+            "recall": 0.02252252252252252
+        }
+    }, 
+    {
+        "id": 15, 
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "washington burgers"
+        }, 
+        "results": {
+            "f-measure": 1.0, 
+            "precision": 1.0, 
+            "recall": 1.0
+        }
+    }, 
+    {
+        "id": 16, 
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "oregon cake"
+        }, 
+        "results": {
+            "f-measure": 0.11320754716981132, 
+            "precision": 0.3, 
+            "recall": 0.06976744186046512
+        }
+    }, 
+    {
+        "id": 17, 
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "oregon cake"
+        }, 
+        "results": {
+            "f-measure": 0, 
+            "precision": 0, 
+            "recall": 0
+        }
+    }, 
+    {
+        "id": 18, 
+        "query": {
+            "db": "mongo", 
+            "table": "restaurants", 
+            "term": "bar and grill"
+        }, 
+        "results": {
+            "f-measure": 0.028368794326241138, 
+            "precision": 1.0, 
+            "recall": 0.014388489208633094
+        }
+    }, 
+    {
+        "id": 19, 
+        "query": {
+            "db": "whoosh", 
+            "table": "restaurants", 
+            "term": "bar and grill"
+        }, 
+        "results": {
+            "f-measure": 0.3571428571428571, 
+            "precision": 1.0, 
+            "recall": 0.21739130434782608
+        }
+    }
+]
