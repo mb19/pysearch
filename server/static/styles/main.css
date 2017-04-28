@@ -32,24 +32,24 @@ table, th, td {
 }
 
 th {
-    text-align: center;
+    text-align: left;
     height: 100px;
-    background:cadetblue;
-    color: black;
+    background: #93ded0;
+    color: #0185b5;
 }
 
 td {
     text-align: left;
-    background: white;
-    color: black;
+    background: #0185b5;
+    color: #b6f4f4;
 }
 
 .blueText{
-    color: #000afd;
+    color: #212148;
     display: inline;
 }
 
-#redText{
-    color: #fd0000;
+#purpleText{
+    color: #212148;
     display: inline;
 }
