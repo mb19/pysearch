@@ -10,7 +10,8 @@ The server requires an environment using Python 2.7. The required packages can b
 
 ### Running
 
-Make sure you have ran `make install` at least once on your machine. Add your credentials to the `server/config/.env` file.
+Make sure you have ran `make install` at least once on your machine. Make a copy of the `server/config/.env.template` and place it in the same directory with the name `.env`. Now, add your credentials to the `server/config/.env` file.
+
 Now, simply run the application using `make server`. The web interface can now be accessed locally with any browser
 at `http://127.0.0.1:5000`.
 
