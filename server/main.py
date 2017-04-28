@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect, make_response, jsonify
-
+import socket
 from searchers.all import build_searcher
 from searchers.base import SearchResult
 import httplib2
@@ -29,7 +29,8 @@ class Server(object):
 
 	@app.route('/', methods=['GET', 'POST'])
 	def index():
-		return render_template('welcome_page.html')
+		server = socket.gethostname()
+		return render_template('welcome_page.html', server=server)
 
 	@app.route('/navigate', methods=['GET'])
 	def navigate():
