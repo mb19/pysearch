@@ -32,16 +32,16 @@ table, th, td {
 }
 
 th {
-    text-align: left;
+    text-align: center;
     height: 100px;
-    background: #93ded0;
-    color: #ff9068;
+    background:cadetblue;
+    color: black;
 }
 
 td {
     text-align: left;
-    background: #5c5590;
-    color: #e98eff;
+    background: white;
+    color: black;
 }
 
 .blueText{
